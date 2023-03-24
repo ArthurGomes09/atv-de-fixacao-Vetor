@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio Array 1</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+<div class="container">
+    <input class="desc" type="text" id="inDescricao"> <br>
+    <input class="adic" type="button" id="Add" value="Adicionar"> 
+    <input class="orde" type="button" id="Ord" value="Ordenar"> 
+</div>
+
+
+
+
+
+
+
+    <script>
+      var objetos = ['Cadeira','Impressora','Garfo']
+        const inObjetos = document.getElementById("inDescricao")
+        const adicionar = document.getElementById("Add")
+        const ordenar = document.getElementById("Ord")
+
+        adicionar.addEventListener('click', ()=>{
+            let objeto = inObjetos.value
+            if(objeto === ''){
+                alert("Informe um valor válido")
+            }else {
+                if(objetos.indexOf(objeto) != - 1){
+                    alert("Objeto já existe no array!")
+                }else{
+                    objetos.push(objeto)
+                    console.log(objetos)
+                    inObjetos.value = ''
+                }
+
+            }
+        })
+        ordenar.addEventListener('click', ()=>{
+            let ordenarObj = objetos.sort()
+            console.log(ordenarObj)
+        })
+    </script>
+</body>
+</html>
